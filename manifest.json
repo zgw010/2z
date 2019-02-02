@@ -1,0 +1,32 @@
+{
+  "name": "2z",
+  "description" : "Translate English into Chinese",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "z.html",
+    "default_icon": "z.png"
+  },
+  "content_scripts": [
+    {
+      "matches" : [
+        "http://*/*" ,
+        "https://*/*" ,
+        "file:///*"
+      ] ,
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "manifest_version": 2,
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens z.html"
+    }
+  }
+}
